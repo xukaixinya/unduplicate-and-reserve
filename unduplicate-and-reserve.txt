@@ -1,0 +1,23 @@
+public class demo {
+    public static void main(String[] args) {
+        String input = "aaabcca";
+        System.out.println("result:");
+        for (int i = unDuplicate(input).length(); i > 0; i--) {
+            System.out.print(unDuplicate(input).charAt(i - 1)); //invert
+        }
+    }
+    public static String unDuplicate(String str) {
+        StringBuffer st = new StringBuffer();
+        int i = 0;
+        int len = str.length();
+        while (i < len) {
+            char a = str.charAt(i);
+            st.append(a);
+            i++;
+            while (i < len && str.charAt(i) == a) {
+                i++;
+            }
+        }
+        return st.toString();
+    }
+}
